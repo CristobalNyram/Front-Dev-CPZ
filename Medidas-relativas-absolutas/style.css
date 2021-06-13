@@ -1,0 +1,232 @@
+
+
+
+
+
+
+
+
+
+
+
+:root
+{
+    --azul:#0575F0;
+    --moradito:#C969DD;
+    --rosadito:#FF6AAF;
+    --anaranjadito:#FF8F7E;
+    --amarilloAnaranjado:#FFC55F;
+    --amarillo:#F9F871;
+
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: 'Mulish', sans-serif;
+
+    
+}
+
+
+
+/* header -------------------------------------------------------------------- */
+body
+{
+    background-color: var(--amarilloAnaranjado);
+
+}
+header
+{
+    
+    display: flex;
+    justify-content: space-between;
+}
+
+header img
+{
+    width: 50px;
+
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+/* ICO de perfil */
+
+.header__menu img
+{
+    width: 40px;
+}
+
+.header__menu--profile
+{
+    margin-right: 50px;
+    /* width: 40px; */
+
+    display: flex;
+}
+
+.header__menu--profile p
+{
+    padding-top: 20px;
+    color: black;
+    font-weight:bolder;
+
+    /* opacity: 0.1; */
+}
+
+
+
+
+/* MENU DEL HEADER */
+
+.header__menu ul
+{
+    display: none;
+    
+    list-style: none;
+    padding: 0px;
+
+    position: absolute;
+
+    width: 100px;
+
+    text-align: end;
+    margin: 0 0 0 -25px;
+}
+.header__menu:hover ul , ul:hover
+{
+    display: block;
+}
+
+.header__menu li
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+.header__menu li a
+{
+   color: whitesmoke;
+   text-decoration: none;
+
+}
+
+.header__menu li a:hover
+{
+  text-decoration: underline;
+  font-weight: bolder;
+
+}
+
+/*BUSCADOR*--------------------------------------------------------------------------------------*/
+.main
+{
+    margin: 0 auto;
+}
+.main__title
+{
+    color: white;
+    font-size: 25px;
+}
+
+.input
+{
+    background-color: rgba(255, 255 , 255, .5);
+    border:2px solid white;
+    border-radius: 25px;
+
+    color: white;
+    font-weight: bold;
+
+    height: 25px;
+    width: 70%;
+
+    padding: 0px 20px;
+    
+    outline: none;
+
+    
+}
+
+::placeholder
+{
+    color: white;
+}
+
+
+/* CARRUSEL------------------------------------------------------------------------------------------------- */
+
+
+.carousel
+{
+    width: 100%;
+    overflow: scroll;
+
+    padding: 30px;
+
+    position: relative;
+
+
+}
+
+.carousel__container
+{
+   
+
+    white-space: nowrap;
+
+    margin: 70px 0px;
+    padding-bottom: 10px;
+
+    /* estamos generando un retardo en el tiempo */
+    transition: 1300ms all;
+
+    transform-origin: center left;
+
+}
+.carousel__item
+{
+    display: inline-block;
+
+    background-color: #0575F0;
+
+    width: 200px;
+    height: 250px;
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    margin-right: 10px;
+
+    cursor: pointer;
+
+
+}
+
+/* estamos dandole movimiento al la carta */
+.carousel__item:hover  ~ .carousel__item
+{
+    transform: translate3d(120px,0,0);
+}
+
+
+/* estamos dandole opacidad */
+.carousel__container:hover .carousel__item
+{
+  
+    opacity: 0.3;
+    
+}
+
+/* estamos aumentado el tamaño de su escala y quitandole la opaccidad*/
+.carousel__container:hover
+.carousel__item:hover
+{
+    transform: scale(1.5);
+    opacity: 1;
+}
