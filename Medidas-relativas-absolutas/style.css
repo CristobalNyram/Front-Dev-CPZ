@@ -127,15 +127,24 @@ header img
 .main
 {
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .main__title
 {
     color: white;
     font-size: 25px;
+
+    /* display: flex; */
+    /* justify-content: center; */
 }
 
 .input
 {
+  
+
     background-color: rgba(255, 255 , 255, .5);
     border:2px solid white;
     border-radius: 25px;
@@ -189,7 +198,7 @@ header img
     transform-origin: center left;
 
 }
-.carousel__item
+.carousel-item
 {
     display: inline-block;
 
@@ -205,18 +214,21 @@ header img
 
     cursor: pointer;
 
+    /* === */
+    position: relative;
+
 
 }
 
 /* estamos dandole movimiento al la carta */
-.carousel__item:hover  ~ .carousel__item
+.carousel--tem:hover  ~ .carousel--item
 {
     transform: translate3d(120px,0,0);
 }
 
 
 /* estamos dandole opacidad */
-.carousel__container:hover .carousel__item
+.carousel__container:hover .carousel--item
 {
   
     opacity: 0.3;
@@ -225,8 +237,37 @@ header img
 
 /* estamos aumentado el tamaño de su escala y quitandole la opaccidad*/
 .carousel__container:hover
-.carousel__item:hover
+.carousel-item:hover
 {
     transform: scale(1.5);
     opacity: 1;
+}
+
+.carousel-item__img
+{
+    width: 200px;
+    height: 250px;    
+
+    /* Para no trastornar o dañar la estetica de nuestra imagen podemos usarla siguiente propiedad , que nos permite 
+    cuidar nuestra imagen */
+    object-fit: cover;
+
+}
+
+.carousel-item__details
+{
+
+    background:linear-gradient(to top, rgba(0,0,0,0.4)0%, rgba(0,0,0,0)100%);
+    font-size: 10px;
+    opacity: 1;
+    transition: 45 ms opacity;
+    padding: 10px;
+    position: absolute;
+
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
 }
